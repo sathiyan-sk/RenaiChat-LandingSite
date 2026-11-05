@@ -3,11 +3,7 @@
 /* Chat widget settings. Keep this first: widget.js reads it when it loads. */
 // SECURITY: widgetKey is the only credential needed for authentication
 // Backend resolves the application from the widget key - appId is for reference only
-window.OceanRAGWidgetConfig = {
-  widgetKey: "wgt_pub_lGfi9kxOZDNN87qmyM2v12yZvePC6uKylQMWANGTXc0",
-  appId: "40463b5b-d7f0-4c67-b0d3-f0b86f21d57a",  // Reference only - NOT used for security/authorization
-  backendUrl: "https://chatbot3-proj.onrender.com"
-};
+
 
 /* Page behaviour. Runs once the page markup is ready. */
 document.addEventListener('DOMContentLoaded', function () {

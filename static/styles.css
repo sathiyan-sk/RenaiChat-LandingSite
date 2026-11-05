@@ -109,8 +109,8 @@
     .feature-card:hover{transform:translateY(-5px);border-color:#8dbbec;box-shadow:0 9px 24px #0a2a5208}
     .feature-visual{height:220px;position:relative;display:flex;align-items:flex-start;justify-content:center;border-bottom:1px solid #0d0d0e;background:#f7f4f2;background-image:radial-gradient(#a9c4e465 .6px,transparent .6px);background-size:15px 15px}
     .card-content{padding:26px}
-    .chapter-mini{font:10px var(--mono);font-weight:500;color:#000000;display:block;margin-bottom:18px;letter-spacing:.8px}
-    .feature-card h3{font-size:20px;margin-bottom:11px;font-weight:550}
+    .chapter-mini{font:10px var(--mono);font-weight:500;color:#f9f6f6;display:block;margin-bottom:18px;letter-spacing:.8px}
+    .feature-card h3{font-size:20px;margin-bottom:11px;font-weight:550;color:#0827ec;}
     .feature-card p{font-size:12px;line-height:1.9;color:#5b708a}
     .doc-stack{width:100%;height:100%;box-sizing:border-box;font-family:var(--mono);background:#fff;border-radius:16px;padding:3px}
     
@@ -673,7 +673,16 @@
     
     .display-heading,.section h2,.section-head h2{color:var(--ink)}
     .section-head h2 span,.muted-heading{color:#3f06e7}
-    .feature-card,.benefit-card,.price-card{background:#f4f5f8;border-radius:8px}
+    .feature-card {
+  background: linear-gradient(135deg, rgb(16, 24, 39) 0%, rgb(9, 14, 26) 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(56, 189, 248, 0.25); /* Soft glowing cyan border */
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
     .feature-card:hover,.benefit-card:hover{transform:none;box-shadow:0 8px 22px #04428f14;border-color:#8dbbec}
     .price-card:hover{transform:none;box-shadow:0 8px 22px #04428f14}
     .feature-visual,.benefit-visual{background-color:#eaf3fc;background-image:radial-gradient(#a9c4e466 .6px,transparent .6px)}
@@ -1926,19 +1935,75 @@
     }
 }
 h3.renai-rag-heading {
-    max-width: 900px !important;
-    margin-top: 5px !important;
-    font-size: 22px !important;
+    max-width: 1050px !important;
+    margin: 15px auto 0 !important;
+    padding: 5px 10px !important;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 23px !important;
     font-weight: 200 !important;
-    line-height: 1 .7 !important;
-    color: #26364b !important;
-    
-    letter-spacing: -0.3px !important;
+    line-height: 1.45 !important;
+
+    color: #00060e !important;
+    letter-spacing: 0.15px !important;
+
+    text-wrap: pretty;
+
+    /* Elegant appearance */
+    text-shadow: 0 1px 1px rgba(20, 70, 120, 0.06);
+
+    /* Smooth animation */
+    animation: renaiTextReveal 1.2s ease both;
 }
 
+/* Highlighted words */
 h3.renai-rag-heading span {
-    color: #087fc4 !important;
-    font-weight: 700 !important;
+    font-weight: 750 !important;
+
+    background: linear-gradient(
+        90deg,
+        #087fc4,
+        #0056b3,
+        #12a8e8
+    );
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+
+    text-shadow: none !important;
+}
+
+/* Subtle entrance animation */
+@keyframes renaiTextReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h3.renai-rag-heading {
+        font-size: 19px !important;
+        line-height: 1.7 !important;
+        padding: 10px 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h3.renai-rag-heading {
+        font-size: 17px !important;
+        line-height: 1.65 !important;
+        padding: 8px 5px !important;
+    }
 }
 
 /* ===== Premium Lead CTA Section ===== */
@@ -2568,7 +2633,7 @@ h3.renai-rag-heading span {
 #features .feature-grid .benefit-visual{height:270px;margin:0;flex-shrink:0}
 .feature-grid .benefit-card .card-content{padding:26px 26px 0}
 .feature-grid .benefit-card .card-content h3{font-size:20px;line-height:normal;font-weight:550;letter-spacing:normal;margin-bottom:11px}
-.benefit-card .card-content p{font-size:12px;line-height:1.9;color:#5b708a}
+.benefit-card .card-content p{font-size:12px;line-height:1.9;color:#f4f6f9}
 .feature-grid .benefit-card .card-tag{margin:auto 26px 0;width:auto;padding:14px 0 20px;font-size:10px;color:#2f5f96}
 .feature-grid .benefit-card .card-content{margin-bottom:20px}
 
@@ -2601,7 +2666,7 @@ h3.renai-rag-heading span {
 .section-label,.chapter{font-size:11px}
 .chapter-mini{font-size:11px}
 .comparison-table .renai-tag,.renai-tag{font-size:9px}
-.feature-card p,.benefit-card .card-content p{font-size:13px;color:#3b4f69}
+.feature-card p, .card-content p{font-size:13px;color:#f6f7f9}
 
 /* ==========================================================
    Round 2: navigation bar, pricing cards, footer

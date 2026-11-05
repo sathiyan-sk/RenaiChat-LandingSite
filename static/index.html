@@ -18,8 +18,21 @@
 </head>
 <!-- OceanRAG widget: config lives in script.js, which must load before widget.js -->
 <script src="script.js"></script>
-<script src="login.js"></script>
-<script src="https://chatbot3-proj-1.onrender.com/widget/widget.js?v=4" async></script>
+
+<!-- OceanRAG Embeddable Widget Snippet -->
+<script>
+  // SECURITY: widgetKey is the only credential needed for authentication
+  // Backend resolves the application from the widget key - appId is for reference only
+  window.OceanRAGWidgetConfig = {
+    widgetKey: "wgt_pub_Gmapijtdh9Z5AGHG71QYqT-efhEMnObe80MqfgX4uUk",
+    appId: "c1ed61a8-49f5-4a04-b6a1-8a87bcd6fd90",  // Reference only - NOT used for security/authorization
+    backendUrl: "https://chatbot.renaiglobal.com"
+  };
+</script>
+<script src="https://chatbot.renaiglobal.com/widget/widget.js?v=4" async></script>
+
+
+
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
   <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -108,7 +121,7 @@
         <div class="stage-grid" aria-hidden="true"></div>
         <div class="orbit orbit-one" aria-hidden="true"></div>
         <div class="orbit orbit-two" aria-hidden="true"></div>
-        <div class="stage-caption mono"> KNOWLEDGE → CONTEXT → CLARITY</div>
+        <!-- <div class="stage-caption mono"> KNOWLEDGE → CONTEXT → CLARITY</div> -->
         <div class="floating-source source-one"><span class="file-icon"><svg class="icon"><use href="#i-doc"/></svg></span><span>Product guide.pdf<small>YOUR DOCUMENTS</small></span><span class="mini-check">✓</span></div>
         <div class="floating-source source-two"><span class="web-icon"><svg class="icon"><use href="#i-globe"/></svg></span><span>Your help center<small>YOUR WEBSITE</small></span><span class="mini-check">✓</span></div>
         <div class="product-window">
@@ -208,7 +221,7 @@
               <p>Hybrid retrieval combines keyword precision with semantic understanding. Reranking brings the most relevant context to the top.</p>
             </div>
           </article>
-          <article class="benefit-card" data-reveal>
+          <article class="feature-card" data-reveal>
           <div class="benefit-visual" aria-hidden="true">
           <div class="clock-ring" style="background: transparent !important; border: none !important; box-shadow: none !important; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="assets/ChunksImg.jpg" alt="Renai Bird Logo" ></div>            <div class="always-pill"></div>
           </div>
@@ -217,7 +230,7 @@
           <h3>KnowledgeCut-off.<br>Knows when not to answer.</h3>
           <p>No relevant source? No confident fiction. Acknowledge the gap and guide customers toward your human support team.</p>
           </div>
-          <span class="card-tag">SUPPORT WITHOUT THE WAIT</span>
+          
         </article>
         </div>
         <div class="feature-footer">

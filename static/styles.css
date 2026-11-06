@@ -157,17 +157,7 @@
 .pipeline-content h3 {
   letter-spacing: -0.55px;
 }
-    /* Marquee */
-    .marquee-section{position:relative;overflow:hidden;border-top:1px solid #1f78d1;border-bottom:1px solid #1f78d1;user-select:none}
-    .marquee-track{display:flex;width:max-content;}
-    .marquee-track>div{display:flex;align-items:center;}
-    .marquee-track span{font-size:35px;font-weight:500;letter-spacing:-0.8px;white-space:nowrap}
-    
-    .marquee-section:hover .marquee-track,.marquee-section.paused .marquee-track{animation-play-state:paused}
-    .marquee-pause{position:absolute;right:12px;bottom:9px;border:1px solid #0a2a5240;border-radius:50%;width:26px;height:26px;font-size:10px}
-    @keyframes marquee{to{transform:translateX(-50%)}}
-
-    /* How it works — paper workspace */
+   /* How it works — paper workspace */
     .architecture-section{color:var(--ink)}
     
     .workspace-topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 23px;background:#adcbff;border-bottom:1px solid var(--line);font-size:15px;color:#000000;border-top-left-radius:18px;border-top-right-radius:18px}
@@ -658,7 +648,7 @@
     .hero{position:relative;isolation:isolate}
     .hero::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%) scaleX(-1);background:#ffffff url(assets/bg-hero.jpg) center bottom/cover no-repeat}
     .hero h1{color:var(--ink)}
-    .hero-description,.hero-reassurance{color:#2b4768}
+    .hero-description,.hero-reassurance{color:#2b4768;font-family: 'Playfair Display', Georgia, serif;}
     .hero-reassurance .icon{color:#000}
     .stage-grid{background-image:radial-gradient(#ffffff80 .8px,transparent .8px)}
     .orbit{border-color:#ffffff55}.orbit-one{background:radial-gradient(ellipse,#ffffff22,transparent 72%)}
@@ -688,10 +678,6 @@
     .feature-visual,.benefit-visual{background-color:#eaf3fc;background-image:radial-gradient(#a9c4e466 .6px,transparent .6px)}
     
     
-
-    .marquee-section{border-color:#02356f;}
-    .marquee-track span{color:#000000}.marquee-outline{color:transparent;-webkit-text-stroke:1px #181111}
-    .marquee-pause{background:#ffffff26;border-color:#ffffff80;color:#fff}
 
     .architecture-section{background:#fff}
     .workspace{border-radius:8px;box-shadow:0 14px 36px #04428f12}
@@ -2451,26 +2437,7 @@ h3.renai-rag-heading span {
   background-repeat:no-repeat;
 }
 
-/* 2a. .marquee-section: seamless endless loop (8 identical groups, shifts by exactly one group) */
 
-@keyframes marquee-loop{from{transform:translateX(0)}to{transform:translateX(-12.5%)}}
-@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
-
-/* 2b. .Blue-bar: seamless endless loop (4 identical groups, shifts by exactly one group) */
-.Blue-bar .moving-text{
-  gap:0;
-  margin:0;
-  animation:blue-bar-loop 10s linear infinite;
-}
-.Blue-bar .moving-text .mt-group{
-  display:inline-flex;
-  align-items:center;
-  gap:45px;
-  padding-right:45px;
-  flex-shrink:0;
-}
-@keyframes blue-bar-loop{from{transform:translateX(0)}to{transform:translateX(-25%)}}
-@media (prefers-reduced-motion:reduce){.Blue-bar .moving-text{animation:none}}
 
 /* 4. Comparison table: wider and larger */
 .comparison-wrapper{max-width:1300px}
@@ -2611,15 +2578,7 @@ h3.renai-rag-heading span {
   background:#fff url(assets/bg-wave.jpg) center center/cover no-repeat;
 }
 
-/* 3. Moving text bars 1 and 3: pause on hover (like the middle bar) + Pause/Resume button */
-.Blue-bar1:hover .moving-text1,.Blue-bar1.paused .moving-text1,
-.Blue-bar:hover .moving-text,.Blue-bar.paused .moving-text{animation-play-state:paused}
-.Blue-bar1 .marquee-pause,.Blue-bar .marquee-pause{
-  position:absolute;right:12px;top:50%;bottom:auto;transform:translateY(-50%);z-index:3;
-  display:grid;place-content:center;padding:0;cursor:pointer;line-height:1;
-  background:#0b4fa8;border:1px solid #ffffffb3;color:#fff;box-shadow:0 2px 6px #02265a55;
-}
-.Blue-bar1 .marquee-pause:hover,.Blue-bar .marquee-pause:hover{background:#1a6fd0}
+
 
 /* ==========================================================
    Final changes
@@ -2637,13 +2596,6 @@ h3.renai-rag-heading span {
 .feature-grid .benefit-card .card-tag{margin:auto 26px 0;width:auto;padding:14px 0 20px;font-size:10px;color:#2f5f96}
 .feature-grid .benefit-card .card-content{margin-bottom:20px}
 
-/* Middle moving text: same look as the Upload bar (blue strip, bold dark text) */
-.marquee-section{height:40px;padding:0;border:0;background:linear-gradient(#fffcfcd9,#1a6fd0),#1a6fd0 url(BG2.jpeg) center/cover no-repeat;color:#110101}
-.marquee-track{height:100%;animation:marquee-loop 10s linear infinite}
-.marquee-track>div{gap:45px;padding-right:45px}
-.marquee-track span,.marquee-outline{font-size:22px;font-weight:700;letter-spacing:normal;color:#050c0c;-webkit-text-stroke:0}
-.marquee-section .marquee-pause{position:absolute;right:12px;top:50%;bottom:auto;transform:translateY(-50%);z-index:3;display:grid;place-content:center;padding:0;cursor:pointer;line-height:1;background:#0b4fa8;border:1px solid #ffffffb3;color:#fff;box-shadow:0 2px 6px #02265a55}
-.marquee-section .marquee-pause:hover{background:#1a6fd0}
 
 /* Extra space: sections were carrying 290px under their content */
 .section{padding-bottom:70px}
@@ -2950,8 +2902,6 @@ img{max-width:100%}
   .closing-card .button{white-space:normal;max-width:100%}
 
   /* marquee strips and pop-ups */
-  .Blue-bar1 .marquee-pause,.Blue-bar .marquee-pause,.marquee-section .marquee-pause{width:32px;height:32px}
-  .moving-text1,.moving-text,.marquee-track span,.marquee-outline{font-size:18px}
   .lead-cta-field input,.lead-cta-field textarea{font-size:16px}
   .lead-sheet-close{width:44px;height:44px}
   .lead-sheet{padding-bottom:env(safe-area-inset-bottom)}
@@ -2985,21 +2935,6 @@ img{max-width:100%}
   .workspace-content{grid-template-columns:1.15fr 1fr}
   .orbit-one{width:min(420px,86%);height:auto;aspect-ratio:1;left:7%}
   .orbit-two{width:min(500px,100%);height:auto;aspect-ratio:1;left:0}
-}
-
-/* ---------- moving-text bars: tidy spacing on tablet / mobile ---------- */
-@media (max-width:900px){
-  .moving-text1 .mt-group,
-  .Blue-bar .moving-text .mt-group,
-  .marquee-track>div{gap:28px;padding-right:28px}
-}
-@media (max-width:640px){
-  .Blue-bar1,.Blue-bar,.marquee-section{height:44px}
-  .moving-text1,.moving-text,.marquee-track{line-height:1}
-  .moving-text1 .mt-group,
-  .Blue-bar .moving-text .mt-group,
-  .marquee-track>div{gap:20px;padding-right:20px}
-  .Blue-bar1 .marquee-pause,.Blue-bar .marquee-pause,.marquee-section .marquee-pause{right:8px;width:30px;height:30px}
 }
 
 /* ---------- first screen: hero fills the viewport so the "Upload your…" bar
@@ -3141,4 +3076,1210 @@ img{max-width:100%}
 }
 @media (max-width:640px){
   .site-footer::before{height:64px;top:-43px}
+}
+
+/* =========================================
+   RENAI FEATURE CARDS - PREMIUM DESIGN
+========================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 35px auto 0;
+    padding: 10px 15px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.feature-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f0f7ff 55%,
+        #e4f2ff 100%
+    );
+
+    border: 1.5px solid #70baff;
+    border-radius: 27px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 102, 255, 0.12),
+        0 18px 35px rgba(0, 92, 210, 0.10),
+        inset 0 1px 5px rgba(255,255,255,0.95);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* Hover effect */
+
+.feature-card:hover {
+    transform: translateY(-9px);
+
+    border-color: #087fff;
+
+    box-shadow:
+        0 12px 28px rgba(0, 119, 255, 0.20),
+        0 25px 45px rgba(0, 87, 220, 0.15),
+        0 0 15px rgba(0, 174, 255, 0.12);
+}
+
+
+/* =========================================
+   TOP IMAGE SECTION
+========================================= */
+
+.feature-visual,
+.benefit-visual {
+    position: relative;
+
+    width: 100%;
+    height: 290px;
+    min-height: 290px;
+
+    overflow: hidden;
+
+    background: #071b52;
+}
+
+
+/* Images */
+
+.feature-visual img,
+.benefit-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* Slight image zoom on hover */
+
+.feature-card:hover .feature-visual img,
+.feature-card:hover .benefit-visual img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================
+   CONTENT PANEL
+========================================= */
+
+.card-content {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    padding: 27px 25px 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(0, 174, 255, 0.09),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f2f8ff 65%,
+            #e9f5ff 100%
+        );
+}
+
+
+/* =========================================
+   NUMBERED PILL HEADING
+========================================= */
+
+.chapter-mini {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 43px;
+    padding: 9px 17px 9px 60px;
+
+    margin-bottom: 19px;
+
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+    color: #073b9b;
+
+    background: linear-gradient(
+        100deg,
+        #dceeff,
+        #ffffff,
+        #e5f1ff
+    );
+
+    border: 1px solid #b6d6ff;
+    border-radius: 50px;
+
+    box-shadow:
+        0 3px 8px rgba(0, 103, 255, 0.10),
+        inset 0 1px 3px #ffffff;
+}
+
+
+/* Circular icon */
+
+.chapter-mini::before {
+    content: "";
+
+    position: absolute;
+    left: -5px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 47px;
+    height: 47px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        #19c9ff,
+        #0065ff 70%,
+        #0642ca
+    );
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 0 0 2px #b5dcff,
+        0 4px 12px rgba(0, 105, 255, 0.35);
+}
+
+
+/* Icon inside circle */
+
+.chapter-mini::after {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 23px;
+    font-weight: 900;
+    color: white;
+
+    z-index: 2;
+}
+
+
+/* Different icons for each card */
+
+.feature-card:nth-child(1) .chapter-mini::after {
+    content: "▤";
+}
+
+.feature-card:nth-child(2) .chapter-mini::after {
+    content: "ϟ";
+    font-size: 29px;
+}
+
+.feature-card:nth-child(3) .chapter-mini::after {
+    content: "▦";
+}
+
+
+/* =========================================
+   CARD TITLES
+========================================= */
+
+.card-content h3 {
+    margin: 0 0 17px;
+
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+
+    font-size: 29px;
+    font-weight: 800;
+
+    line-height: 1.23;
+    letter-spacing: -0.8px;
+
+    color: #071c54;
+}
+
+
+/* Blue highlighted second line */
+
+.card-content h3 span {
+    display: inline;
+
+    background: linear-gradient(
+        90deg,
+        #087bfa,
+        #0050c9,
+        #078cdb
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.card-content p {
+    position: relative;
+
+    margin: 0;
+    padding-left: 19px;
+
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+
+    font-size: 17px;
+    font-weight: 450;
+
+    line-height: 1.48;
+    letter-spacing: -0.15px;
+
+    color: #263e70;
+}
+
+
+/* Blue vertical accent */
+
+.card-content p::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+
+    width: 4px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        180deg,
+        #078bff,
+        #00c7ef
+    );
+
+    box-shadow: 0 0 8px rgba(0, 136, 255, 0.25);
+}
+
+
+/* =========================================
+   DECORATIVE BOTTOM WAVES
+========================================= */
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    bottom: -65px;
+    right: -45px;
+
+    width: 240px;
+    height: 125px;
+
+    background: linear-gradient(
+        145deg,
+        transparent 20%,
+        rgba(0, 174, 255, 0.10) 40%,
+        rgba(0, 130, 255, 0.28) 75%,
+        rgba(0, 75, 220, 0.65)
+    );
+
+    border-radius: 80% 0 0 0;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+
+/* Additional curved accent */
+
+.feature-card::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    bottom: -78px;
+    left: 20%;
+
+    width: 90%;
+    height: 110px;
+
+    border-top: 2px solid rgba(0, 150, 255, 0.18);
+    border-radius: 50%;
+
+    transform: rotate(-9deg);
+
+    pointer-events: none;
+}
+
+
+/* Keep content above decorative waves */
+
+.card-content > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   INDIVIDUAL CARD ACCENTS
+========================================= */
+
+.feature-card:nth-child(1) {
+    border-color: #65aaff;
+}
+
+.feature-card:nth-child(2) {
+    border-color: #718cff;
+}
+
+.feature-card:nth-child(3) {
+    border-color: #54c9ed;
+}
+
+.feature-card:nth-child(2) .chapter-mini::before {
+    background: linear-gradient(
+        145deg,
+        #a78bff,
+        #315bff,
+        #123cce
+    );
+}
+
+.feature-card:nth-child(3) .chapter-mini::before {
+    background: linear-gradient(
+        145deg,
+        #24e3e0,
+        #087dff,
+        #1246d5
+    );
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .feature-visual,
+    .benefit-visual {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+    }
+
+    .card-content p {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        padding: 10px 12px;
+    }
+
+    .feature-visual,
+    .benefit-visual {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .card-content {
+        padding: 24px 21px 30px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .card-content p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .chapter-mini {
+        font-size: 11px;
+        min-height: 40px;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Modern typography for RenAI closing section */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.closing-content {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* RenAI Chat */
+.closing-content .closing-brand-text {
+    display: inline-block;
+    font-size: 85px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -2.5px !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Main heading */
+.closing-content h2 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-size: 58px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: -1.8px !important;
+    line-height: 1.08 !important;
+}
+
+/* Highlighted conversation */
+.closing-content .closing-highlight-text {
+    font-weight: 800 !important;
+    font-style: italic !important;
+    letter-spacing: -2px !important;
+    color: #000000 !important;
+}
+
+/* Description / Subtitle */
+.closing-content > p {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.4px !important;
+    line-height: 1.35 !important;
+}
+
+/* Tagline */
+.closing-content .eyebrow {
+    margin-bottom: 12px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+}
+
+/* CTA text */
+.closing-content .button {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    margin-top: 0 !important;
+}
+
+/* Bottom note */
+.closing-content .closing-small {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Reduce overall card height */
+.closing-card {
+    border-radius: 38px !important;
+    min-height: 500px !important;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
+
+/* Reduce outer section spacing */
+.closing-section {
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+
+/* ===== RENAI PREMIUM MOVING FEATURE BAR ===== */
+
+.Blue-bar1 {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        110deg,
+        #031c63 0%,
+        #0649b8 35%,
+        #087df2 70%,
+        #032c82 100%
+    );
+    border-top: 1px solid rgba(130, 210, 255, 0.9);
+    border-bottom: 1px solid #55caff;
+    box-shadow:
+        0 5px 18px rgba(0, 65, 180, 0.35),
+        inset 0 2px 8px rgba(120, 220, 255, 0.4),
+        inset 0 -3px 8px rgba(0, 15, 80, 0.5);
+    z-index: 10;
+}
+
+/* Moving text container */
+
+.moving-text1 {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-shrink: 0;
+    white-space: nowrap;
+    animation: renaiMarquee 35s linear infinite;
+    will-change: transform;
+}
+
+/* Each repeated group */
+
+.mt-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+    padding-right: 45px;
+}
+
+/* Individual items */
+
+.mt-group > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 23px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 5px rgba(0, 20, 80, 0.45);
+    border-right: 1px solid rgba(190, 230, 255, 0.45);
+    transition: all 0.3s ease;
+}
+
+/* Upload Your - Highlighted item */
+
+.mt-group > span:first-child {
+    min-height: 25px;
+    padding: 0 30px;
+    margin-right: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #c9eaff,
+        #80ccff
+    );
+    color: #0648a8;
+    font-size: 20px;
+    font-weight: 900;
+    text-shadow: none;
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 18px rgba(80, 205, 255, 0.9),
+        inset 0 2px 5px #ffffff;
+}
+
+/* File formats hover effect */
+
+.mt-group > span:not(:first-child):hover {
+    color: #a8edff;
+    align-items: center;
+    margin-left: 22px;
+    text-shadow: 0 0 12px #ffffff;
+}
+
+/* Moving animation */
+
+@keyframes renaiMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-29.6667%);
+    }
+}
+
+/* Pause button */
+
+.marquee-pause {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(0, 35, 110, 0.8);
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(100, 210, 255, 0.7);
+}
+
+/* Pause animation on hover */
+
+.Blue-bar1:hover .moving-text1 {
+    animation-play-state: paused;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .Blue-bar1 {
+        height: 62px;
+    }
+
+    .mt-group > span {
+        font-size: 15px;
+        padding: 0 15px;
+        min-height: 38px;
+    }
+
+    .mt-group > span:first-child {
+        min-height: 44px;
+        font-size: 16px;
+        padding: 0 18px;
+    }
+
+    .mt-group {
+        padding-right: 30px;
+    }
+
+    .marquee-pause {
+        width: 29px;
+        height: 29px;
+        font-size: 12px;
+    }
+}
+
+/* ===== RENAI SECOND PREMIUM MARQUEE BAR ===== */
+
+.blue-bar2 {
+    position: relative;
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background: linear-gradient(
+        110deg,
+        #03175f,
+        #0644ae,
+        #0879ed,
+        #0644ae,
+        #03175f
+    );
+
+    border-top: 1px solid #70d9ff;
+    border-bottom: 1px solid #70d9ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 160, 255, 0.7),
+        0 5px 18px rgba(0, 30, 100, 0.4),
+        inset 0 3px 10px rgba(150, 225, 255, 0.4),
+        inset 0 -4px 10px rgba(0, 15, 75, 0.5);
+
+    z-index: 10;
+}
+
+/* Moving track */
+
+.blue-bar2 .marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    animation: knowledgeMove 40s linear infinite;
+    will-change: transform;
+}
+
+/* Text group */
+
+.blue-bar2 .marquee-track > div {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 0 30px;
+}
+
+/* BOTH TEXTS - SAME UPLOAD YOUR DESIGN */
+
+.blue-bar2 .marquee-track > div > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 20px;
+    padding: 0 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #d2efff,
+        #91d4ff
+    );
+
+    color: #0645a5;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+
+    text-shadow: none;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 16px rgba(80, 205, 255, 0.8),
+        inset 0 2px 5px #ffffff;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover glow */
+
+.blue-bar2 .marquee-track > div > span:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 12px #ffffff,
+        0 0 24px rgba(80, 205, 255, 1),
+        inset 0 2px 8px #ffffff;
+}
+
+/* Moving animation */
+
+@keyframes knowledgeMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* STOP MOVEMENT ON HOVER */
+
+.blue-bar2:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* PAUSE BUTTON */
+
+.blue-bar2 .marquee-pause2 {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #087df2,
+        #032b80
+    );
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px rgba(100, 210, 255, 0.8),
+        0 0 15px rgba(0, 100, 255, 0.5);
+}
+
+/* Pause button hover */
+
+.blue-bar2 .marquee-pause2:hover {
+    background: #ffffff;
+    color: #0645a5;
+
+    box-shadow:
+        0 0 12px #ffffff,
+        0 0 20px #4bcaff;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .blue-bar2 {
+        height: 70px;
+    }
+
+    .blue-bar2 .marquee-track > div {
+        gap: 12px;
+        padding: 0 18px;
+    }
+
+    .blue-bar2 .marquee-track > div > span {
+        min-height: 43px;
+        padding: 0 17px;
+        font-size: 17px;
+        border-radius: 12px;
+    }
+
+    .blue-bar2 .marquee-pause2 {
+        width: 29px;
+        height: 29px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+/* ===== RENAI AI MODEL MOVING BAR ===== */
+
+.Blue-bar3 {
+    position: relative;
+    width: 150vw;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: none;
+    margin-left: calc(40% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        110deg,
+        #03175f 0%,
+        #063ba5 25%,
+        #0879ed 55%,
+        #0648b5 80%,
+        #03165b 100%
+    );
+
+    border-radius: 40px;
+    border: 1px solid #64d7ff;
+
+    box-shadow:
+        0 0 8px rgba(0, 170, 255, 0.9),
+        0 0 20px rgba(0, 110, 255, 0.65),
+        0 5px 18px rgba(0, 30, 100, 0.4),
+        inset 0 3px 10px rgba(150, 225, 255, 0.45),
+        inset 0 -4px 10px rgba(0, 15, 75, 0.6);
+
+    z-index: 10;
+}
+
+/* Moving text container */
+
+.Blue-bar3 .moving-text {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    animation: aiModelMarquee 10s linear infinite;
+    will-change: transform;
+}
+
+/* Individual repeated groups */
+
+.Blue-bar3 .mt-group {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0;
+    padding-right: 35px;
+}
+
+/* Individual model names */
+
+.Blue-bar3 .mt-group > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+    padding: 0 25px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 5px rgba(0, 15, 70, 0.5);
+
+    border-right: 1px solid rgba(190, 230, 255, 0.4);
+
+    transition: all 0.3s ease;
+}
+
+/* Select AI model highlight */
+
+.Blue-bar3 .mt-group > span:first-child {
+    min-height: 24px;
+    padding: 0 27px;
+    margin-right: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #d2efff,
+        #91d4ff
+    );
+
+    color: #0645a5;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    text-shadow: none;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 16px rgba(80, 205, 255, 0.9),
+        inset 0 2px 5px #ffffff;
+}
+
+/* AI model hover effect */
+
+.Blue-bar3 .mt-group > span:not(:first-child):hover {
+    color: #a8edff;
+
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 15px #45caff;
+}
+
+/* Moving animation */
+
+@keyframes aiModelMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+/* Pause button */
+
+.Blue-bar3 .marquee-pause3 {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+
+    background: rgba(0, 30, 100, 0.9);
+    color: #ffffff;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px rgba(100, 210, 255, 0.8);
+}
+
+/* Pause on hover */
+
+.Blue-bar3:hover .moving-text {
+    animation-play-state: paused;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+
+    .Blue-bar3 {
+        height: 65px;
+        border-radius: 25px;
+    }
+
+    .Blue-bar3 .mt-group > span {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 15px;
+    }
+
+    .Blue-bar3 .mt-group > span:first-child {
+        min-height: 44px;
+        padding: 0 17px;
+        font-size: 15px;
+    }
+
+    .Blue-bar3 .mt-group {
+        padding-right: 20px;
+    }
+
+    .Blue-bar3 .marquee-pause3 {
+        width: 29px;
+        height: 29px;
+        font-size: 12px;
+    }
+}
+
+
+/* ===== RENAI TEXT ANIMATION ===== */
+
+
+/* ===== RENAI TEXT REVEAL EFFECT ===== */
+
+.closing-highlight-text1 {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+
+    background: linear-gradient(
+    90deg,
+    #ffffff,
+    #d9d9d9,
+    #000000,
+    #d9d9d9,
+    #ffffff
+);
+background-size: 200% auto;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+    opacity: 0;
+
+    animation:
+        renaiTextReveal 2s ease forwards,
+        renaiTextGlow 4s ease-in-out 2s infinite;
+}
+
+/* Text appearing animation */
+
+@keyframes renaiTextReveal {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+    }
+}
+
+/* Moving gradient effect */
+
+@keyframes renaiTextGlow {
+    0%, 100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
 }

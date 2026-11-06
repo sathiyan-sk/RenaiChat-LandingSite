@@ -553,4 +553,43 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', function () { if (window.innerWidth > 1100 && !m.hidden) set(false); });
   })();
 
+  
+document.addEventListener("DOMContentLoaded", () => {
+
+    const text = document.querySelector(
+        ".closing-highlight-text1"
+    );
+
+    if (!text) return;
+
+    function restartAnimation() {
+
+        text.classList.remove("animate");
+
+        // Reset the animation
+        void text.offsetWidth;
+
+        // Start again
+        text.classList.add("animate");
+    }
+
+    // Initial animation
+    restartAnimation();
+
+    let scrollTimeout;
+
+    // Restart when user scrolls up or down
+    window.addEventListener("scroll", () => {
+
+        clearTimeout(scrollTimeout);
+
+        scrollTimeout = setTimeout(() => {
+            restartAnimation();
+        }, 150);
+
+    }, { passive: true });
+
+});
+
+
 });

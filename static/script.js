@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const note = price.closest('.price-card').querySelector('.billing-note');
             if (note && note.dataset.monthlyNote) {
               note.textContent = annual
-                ? '$' + (base * 0.8 * 12).toLocaleString('en-US', { maximumFractionDigits: 0 }) + ' billed annually'
+                ? '' + (base * 0.8 * 12).toLocaleString('en-US', { maximumFractionDigits: 0 }) + ' billed annually'
                 : note.dataset.monthlyNote;
             }
           });

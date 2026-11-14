@@ -10,7 +10,7 @@
     .svg-library{position:absolute;width:0;height:0;overflow:hidden}
     ::selection{color:var(--ink)}
     .container{width:calc(100% - 112px);max-width:1392px;margin-inline:auto}
-    .mono,.eyebrow,.chapter,.card-tag{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:1.05px}
+    .mono,.eyebrow,.chapter,.card-tag{font-family:var(--mono);font-size:2s0px;font-weight:400;letter-spacing:1.05px;color:#00080f}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .skip-link{position:fixed;z-index:100;top:10px;left:12px;padding:12px;background:var(--lime);transform:translateY(-160%)}.skip-link:focus{transform:translateY(0)}
     .status-dot,.dot{display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0}
@@ -95,24 +95,13 @@
     /* Shared section chrome */
     .section{padding-top:50px;}
     .section-head {display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:41px;flex-wrap:wrap}
-    .section-label{display:flex;align-items:center;gap:12px;color:#3f6a9a;margin-bottom:23px;font-size:9px;letter-spacing:1px;font-family:var(--mono)}
+    .section-label{display:flex;align-items:center;gap:12px;color:#00070e;margin-bottom:23px;font-size:19px;letter-spacing:5px;font-family:var(--mono)}
     
     .chapter{display:flex;align-items:center;gap:16px;color:#3f6a9a;margin-bottom:23px;font-size:9px;letter-spacing:1px}
     .chapter-line{display:inline-block;width:40px;height:1px;background:#b5c9e0}
     .display-heading{font-size:clamp(32px,3.4vw,45px);font-weight:500;letter-spacing:-1.9px;line-height:1.2}
     .muted-heading{color:#8aa0bb}
-    
 
-    /* Why RenAI cards */
-    .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .feature-card{background:#f8fbff;border:1px solid #080704;border-radius:12px;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
-    .feature-card:hover{transform:translateY(-5px);border-color:#8dbbec;box-shadow:0 9px 24px #0a2a5208}
-    .feature-visual{height:220px;position:relative;display:flex;align-items:flex-start;justify-content:center;border-bottom:1px solid #0d0d0e;background:#f7f4f2;background-image:radial-gradient(#a9c4e465 .6px,transparent .6px);background-size:15px 15px}
-    .card-content{padding:26px}
-    .chapter-mini{font:10px var(--mono);font-weight:500;color:#f9f6f6;display:block;margin-bottom:18px;letter-spacing:.8px}
-    .feature-card h3{font-size:20px;margin-bottom:11px;font-weight:550;color:#0827ec;}
-    .feature-card p{font-size:12px;line-height:1.9;color:#5b708a}
-    .doc-stack{width:100%;height:100%;box-sizing:border-box;font-family:var(--mono);background:#fff;border-radius:16px;padding:3px}
     
     
     
@@ -123,26 +112,13 @@
     
     .feature-footer{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:31px;padding-top:24px;font-size:10px;color:#8e899b}
     .feature-footer span{display:flex;gap:8px;align-items:center}
-    .benefit-card{position:relative;border:1px solid #0a0b0b;border-radius:9px;background:#101112;padding:0 28px 25px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
-    .benefit-card:hover{border-color:#151617;box-shadow:0 9px 24px #0a2a5205}
-    .benefit-visual{height:205px;position:relative;display:flex;align-items:center;justify-content:center;margin:0 -28px 23px;background:#eaf3fc;border-bottom:1px solid #0d0e0f;background-image:radial-gradient(#a9c4e465 .6px,transparent .6px);background-size:13px 13px}
     
-    .benefit-card h3{font-size:19px;line-height:1.45;font-weight:550;letter-spacing:-.55px;margin-bottom:13px}
     
     .card-tag{display:inline-block;border-top:1px solid #d6e4f4;margin-top:20px;padding-top:17px;width:100%;color:#4f7fb5;font-size:8px}
-    .clock-ring{width:120px;height:120px;border:1px solid #cfe0f3;border-radius:50%;position:relative}
-    .always-pill{position:absolute;bottom:28px;background:#fff;border:1px solid #cfe0f3;padding:8px 10px;border-radius:5px;font-size:8px}
 .section-label,
 .chapter,
 .principle-number,
 .closing-content .eyebrow,
-.plan-label {
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 1.05px;
-  color: #3f6a9a;
-}
 
 .display-heading,
 .section-head h2,
@@ -150,7 +126,7 @@
 .closing-card h2 {
   font-size: clamp(32px, 3.4vw, 45px);
   font-weight: 500;
-  letter-spacing: -1.9px;
+  letter-spacing: 1.9px;
   line-height: 1.2;
 }
 
@@ -160,7 +136,7 @@
    /* How it works — paper workspace */
     .architecture-section{color:var(--ink)}
     
-    .workspace-topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 23px;background:#adcbff;border-bottom:1px solid var(--line);font-size:15px;color:#000000;border-top-left-radius:18px;border-top-right-radius:18px}
+    .workspace-topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 23px;background:#054ecb;border-bottom:1px solid var(--line);font-size:15px;color:#000000;border-top-left-radius:18px;border-top-right-radius:18px}
     .window-dots{display:flex;gap:5px}.window-dots i{height:6px;width:6px;background:#000000;border-radius:50%}
     .preview-badge{border:1px solid #a9cdf3;border-radius:4px;padding:3px 8px;color:#1565c0;background:#eaf3fc}
     .workspace-content{display:grid;grid-template-columns:1.15fr 1fr;min-height:460px}
@@ -195,28 +171,11 @@
     opacity: 1;
 }
     .chat-disclaimer{text-align:center;margin-top:9px}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    /* Developers */
+     /* Developers */
     .developer-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
     .developer-points{margin:24px 0;display:flex;flex-direction:column;gap:12px;color:#2b4768}
-    .developer-points li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6}
-    .developer-intro{color: #000000;line-height:1.8;margin-top:16px;max-width:440px;font-size:19px}
+    .developer-points li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;font-family: 'Playfair Display', Georgia, serif;}
+    .developer-intro{color: #000000;line-height:1.8;margin-top:16px;max-width:440px;font-size:19px;font-family: 'Playfair Display', Georgia, serif;}
     .integration-panel{border:15px solid var(--line);border-radius:55px;background:#ffffff;overflow:hidden}
     .integration-tabs{display:flex;border-bottom:1px solid var(--line);min-width: 420px}
     .integration-tabs button{flex:1;padding:10px;font-size:22px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:18px;min-width: 2px;min-height: 5px}
@@ -258,13 +217,10 @@
     .billing-toggle{padding:4px;display:flex;gap:3px;border:1px solid var(--line);border-radius:7px;background:#fff}
     .billing-toggle button{padding:9px 13px;border-radius:4px;font-size:10px;color:#3f6a9a}
     
-    .save-badge{font:10px var(--mono);color:#000000;line-height:1.6}
-    
-    .pricing-grid{color: #de0e0e;}
-    .price-card{border:1px solid var(--line);border-radius:11px;background:#fff;padding:31px 28px;position:relative;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,border-color .35s}
+    .save-badge{font:10px var(--mono);color:#030000;line-height:1.6;font-weight: 300;font-size: 14px;}
     
     
-    .plan-label{font:9px var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:#3f6a9a;margin-bottom:12px}
+    .plan-label{font-size:9px var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:#3f6a9a;margin-bottom:12px}
     .plan-description1{font-size:13px;color:#000000;min-height:40px;line-height:1.6}
         .plan-description2{font-size:13px;color:#f8f9fa;min-height:40px;line-height:1.6}
 
@@ -282,7 +238,7 @@
         .plan-features1 li{display:flex;align-items:center;gap:9px;font-size:13px;color:#000912;line-height:2.6}
             .plan-features3 li{display:flex;align-items:center;gap:9px;font-size:13px;color:#002952;line-height:2.6}
 
-    .plan-badge{position:absolute;top:22px;right:18px;border:1px solid #1f78d1;border-radius:4px;padding:3px 7px;font-size:8px;letter-spacing:.5px}
+    .plan-badge{position:absolute;top:22px;right:18px;border:1px solid #1f78d1;border-radius:4px;padding:3px 7px;font-size:10px;letter-spacing:1.9px}
     .pricing-footnote{margin-top:25px;}
 
     
@@ -663,7 +619,7 @@
     
     .display-heading,.section h2,.section-head h2{color:var(--ink)}
     .section-head h2 span,.muted-heading{color:#3f06e7}
-    .feature-card {
+    /* .feature-card {
   background: linear-gradient(135deg, rgb(16, 24, 39) 0%, rgb(9, 14, 26) 100%);
   border-radius: 18px;
   border: 1px solid rgba(56, 189, 248, 0.25); /* Soft glowing cyan border */
@@ -671,9 +627,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
+} */
 
-    .feature-card:hover,.benefit-card:hover{transform:none;box-shadow:0 8px 22px #04428f14;border-color:#8dbbec}
+    /* .feature-card:hover,.benefit-card:hover{transform:none;box-shadow:0 8px 22px #04428f14;border-color:#8dbbec} */
     .price-card:hover{transform:none;box-shadow:0 8px 22px #04428f14}
     .feature-visual,.benefit-visual{background-color:#eaf3fc;background-image:radial-gradient(#a9c4e466 .6px,transparent .6px)}
     
@@ -691,7 +647,7 @@
     pre{background:#0a2a52}
     .billing-toggle button[aria-pressed=true]{background:var(--blue);color:#fff}
     .price-card.featured{border-color:var(--blue);background:#fff;box-shadow:0 10px 28px #04428f14}
-    .plan-badge{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .plan-badge{background:#070300;color:#fff;border-color:var(--blue)}
     .plan-price{color:var(--ink)}
 
     .principle-section{background:#eaf3fc;border-color:var(--line)}
@@ -699,7 +655,13 @@
     .principle-inner blockquote span{color:var(--blue)}
     .faq-list summary:hover{color:var(--blue)}
 
-    .closing-card{background:linear-gradient(90deg,#04428ff2 0,#04428fcc 45%,#04428f00 80%),#04428f url(BG2.jpeg) center/cover no-repeat;border-color:#02356f;border-radius:8px;color:#fff}
+    .closing-card {
+  background: linear-gradient(90deg, #04428f 0%, #04428f 45%, #040d1a 100%);
+  border: 1px solid #02356f;
+  border-radius: 8px;
+  color: #fff;
+}
+
     .closing-grid{display:none}
     .closing-card h2,.closing-content .eyebrow,.closing-card p,.closing-small{color:#fff}
     .closing-content .status-dot{background:#8cc8fe}
@@ -719,7 +681,7 @@
     .chat-powered strong,.table-brand{font-family:'Quicksand','Manrope',sans-serif;font-weight:600;text-transform:lowercase;letter-spacing:.01em}
     .table-brand{font-size:59px}
     
-    .comparison-section::before,.principle-section::before,.site-footer::before{content:'';position:absolute;left:0;right:0;top:-79px;height:80px;pointer-events:none;background:url(wave-light.svg) bottom/100% 100% no-repeat}
+    /* .comparison-section::before,.principle-section::before,.site-footer::before{content:'';position:absolute;left:0;right:0;top:-79px;height:80px;pointer-events:none;background:url(wave-light.svg) bottom/100% 100% no-repeat} */
     .principle-section{position:relative}.principle-section::before{background-image:url(wave-tint.svg)}
     .comparison-section,.site-footer{position:relative}
     .principle-mark{width:92px;height:92px;margin-top:18px}
@@ -729,33 +691,22 @@
     @media (max-width:640px){.comparison-section::before,.principle-section::before,.site-footer::before{height:44px;top:-43px}}
 
     /* ===== Section backgrounds (Blue-waves images, in upload order 6→1) ===== */
-    #features,#how-it-works,#comparison,#developers,#pricing{position:relative;isolation:isolate}
-    #features::after,#how-it-works::after,#comparison::after,#developers::after,#pricing::after{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background-repeat:no-repeat;background-size:cover;background-position:center bottom}
+    #features,#how-it-works,#comparison,#view,#pricing{position:relative;isolation:isolate}
+    #features::after,#how-it-works::after,#comparison::after,#view::after,#pricing::after{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background-repeat:no-repeat;background-size:cover;background-position:center bottom}
     
     #how-it-works::after{background-image:url(assets/bg-how.jpg)}
     #comparison::after{background-image:url(assets/bg-compare.jpg)}
-    #developers::after{background-image:url(assets/bg-developers.jpg)}
+    #view::after{background-image:url(assets/bg-developers.jpg)}
     #pricing::after{background-image:url(assets/bg-pricing.jpg)}
     
     .hero-copy{position:relative}
-    @media (max-width:640px){#features::after,#how-it-works::after,#comparison::after,#developers::after,#pricing::after{background-position:center center}}
+    @media (max-width:640px){#features::after,#how-it-works::after,#comparison::after,#view::after,#pricing::after{background-position:center center}}
     .feature-footer, .feature-footer span, .pricing-footnote, .pricing-disclaimer {color:#000000}
     
     .stage-caption {color:#3f6a9a}
   
 
-/* ---- style block 2 ---- */
-.Blue-bar1{ height: 40px; overflow: hidden; white-space: nowrap;margin-top: -60px;position: relative;z-index: 10; background:linear-gradient(#fffcfcd9,#1a6fd0),#1a6fd0 url(BG2.jpeg) center/cover no-repeat; border-color:#1a6fd0; color:#110101}
 
-.moving-text1 {
-  align-items: center;
-  height: 100%;
-  font-size: 22px;
-  font-weight: bold;
-  color: #050c0c;
-  margin: 0;
-  padding: 0;
-}
 
 .moving-text1 span {
   flex-shrink: 0;
@@ -765,7 +716,7 @@
 
 /* ---- style block 4 ---- */
 .renai-docs-card {
-    width: 750px;
+    width: 600px;
     max-width: 100%;
     box-sizing: border-box;
     margin-left: auto;
@@ -811,8 +762,9 @@
 
 .renai-docs-card p {
     margin: 12px 0 0;
-    color: #61758e;
+    color: #00070e;
     font-size: 13px;
+    font-family: 'Playfair Display', Georgia, serif;
     line-height: 1.6;
 }
 
@@ -843,39 +795,6 @@
     .renai-docs-card h2 {
         font-size: 25px;
     }
-}
-
-/* ---- style block 5 ---- */
-.Blue-bar {
-  background-color: #388df6f2;
-  margin-top: -px;
-} .Blue-bar {width: 100vw; margin-left: calc(50% - 50vw); height: 40px; overflow: hidden; white-space: nowrap;margin-top: -px;position: relative;transform: translateY(40px); z-index: 10; background:linear-gradient(#fffcfcd9,#04428fd9),#9a0ef8 url(BG2.jpeg) center/cover no-repeat; border-color:#02356f; color:#110101}
-
-.moving-text {
-  display: inline-flex;
-  align-items: center;
-  gap: 45px;
-  width: max-content;
-  height: 100%;
-  font-size: 22px;
-  font-weight: bold;
-  color: #000303;
-  animation: move-left 32s linear infinite;
-  margin: 5;
-  padding: 0;
-}
-
-.moving-text span {
-  flex-shrink: 0;
-}
-
-@keyframes move-left {
-  from {
-    transform: translateX(100vw);
-  }
-  to {
-    transform: translateX(-100%);
-  }
 }
 
 /* ---- style block 6 ---- */
@@ -953,6 +872,7 @@
 }
 
 .rag-description {
+    font-family: 'Playfair Display', Georgia, serif;
     margin: 0 0 22px;
     color: #00070f;
     font-size: 13px;
@@ -1579,9 +1499,9 @@
 }
 
 /* ===== Why RenAI feature cards: 3 images fill their rectangle exactly ===== */
-#features .feature-visual,#features .benefit-visual{height:270px;margin-left:0;margin-right:0;padding:0;overflow:hidden;align-items:stretch;justify-content:stretch;background-image:none}
-#features .benefit-visual{margin:0 -28px 23px}
-#features .doc-stack,#features .search-map,#features .search-path,#features .clock-ring{width:100%!important;height:100%!important;padding:0!important;margin:0;border:0!important;border-radius:0!important;gap:0;background:transparent!important;display:block}
+#features .feature-visual,#features .benefit-visual{height:270px;width: 100%;object-fit: cover;;margin-left:0;margin-right:0;padding:0;overflow:hidden;align-items:stretch;justify-content:stretch;background-image:none}
+#features .benefit-visual{margin:0 0px 0px}
+#features .doc-stack,#features .search-map,#features .search-path,#features .clock-ring{width:100%!important;height:100%!important;margin:0;border:0!important;border-radius:0!important;gap:0;background:transparent!important;display:block}
 #features .feature-visual img,#features .benefit-visual img{display:block;width:100%!important;height:100%!important;min-width:0!important;object-fit:cover!important;object-position:center center!important}
 #features .always-pill{display:none}
 #features .feature-visual img[src*='docment']{object-position:center bottom!important}
@@ -1616,90 +1536,12 @@
     border-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Growth card - golden yellow */
-
-/* Enterprise card - futuristic blue */
-
-/* Optional blue light effects for Enterprise */
-
-/* Keep card content above decorative effects */
-.pricing-grid .price-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Plan headings */
-.pricing-grid .plan-label {
-    margin: 0 0 12px;
-    font-size: 11px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-}
-
-/* Description text */
-.pricing-grid .plan-description1,
-.pricing-grid .plan-description2,
-.pricing-grid .plan-description3 {
-    margin: 0 0 20px;
-    font-size: 12px;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
-.pricing-grid .plan-description1 {
-    color: #122b2e;
-}
-
-.pricing-grid .plan-description2 {
-    color: #3e300b;
-}
-
-.pricing-grid .plan-description3 {
-    color: #f1faff;
-}
-
-/* Price area */
-.pricing-grid .plan-price1,
-.pricing-grid .plan-price2,
-.pricing-grid .plan-price {
-    display: flex;
-    align-items: baseline;
-    gap: 3px;
-    min-height: 46px;
-    margin: 0;
-}
-
-.pricing-grid .plan-price1 span,
-.pricing-grid .plan-price2 span {
-    font-size: 39px !important;
-    line-height: 1.15;
-    font-weight: 500;
-    letter-spacing: -1.5px;
-}
-
-.pricing-grid .plan-price1 span {
-    color: #061a21;
-}
-
-.pricing-grid .plan-price2 span {
-    color: #684c09;
-}
-
-/* Month text */
-.pricing-grid .plan-price1 small,
-.pricing-grid .plan-price2 small {
-    font-size: 15px;
-    font-weight: 400;
-}
-
 /* Enterprise custom price */
 .pricing-grid .plan-price .custom-price {
     display: block;
     margin-top: 2px;
     font-size: 32px;
-    line-height: 1.3;
+    line-height: 0.3;
     font-weight: 700;
     letter-spacing: -1px;
     color: #78edff;
@@ -1709,86 +1551,13 @@
 /* Billing notes */
 .pricing-grid .billing-note {
     margin: 2px 0 19px;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.5;
     font-weight: 400;
 }
 
 .pricing-grid .price-card:first-child .billing-note {
     color: #30494b !important;
-}
-
-/* Built to scale badge */
-.pricing-grid .plan-badge {
-    position: absolute;
-    top: 14px;
-    right: 12px;
-    padding: 5px 9px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 5px;
-    background: #398c8b;
-    color: #ffffff;
-    font-size: 9px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-}
-
-/* Buttons */
-.pricing-grid .price-card .button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    min-height: 39px;
-    padding: 10px 12px;
-    margin: 0 0 10px;
-    border-radius: 7px;
-    font-family: inherit;
-    font-size: 11px;
-    line-height: 1.4;
-    font-weight: 500;
-    text-align: left;
-    cursor: pointer;
-    box-sizing: border-box;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
-}
-
-/* Starter button */
-.pricing-grid .price-card:first-child .button-ghost {
-    color: #ffffff;
-    background: linear-gradient(100deg, #07505a, #167b7e);
-    border: 1px solid rgba(100, 229, 222, 0.65);
-    box-shadow:
-        0 0 0 2px rgba(27, 119, 118, 0.12),
-        0 3px 8px rgba(0, 62, 65, 0.2);
-}
-
-/* Growth button */
-
-/* Enterprise button */
-
-/* Button icons */
-.pricing-grid .button .icon {
-    width: 14px;
-    height: 14px;
-    min-width: 14px;
-    stroke: currentColor;
-}
-
-/* Button hover */
-.pricing-grid .price-card .button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.08);
-}
-
-.pricing-grid .price-card .button:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
 }
 
 /* Feature lists */
@@ -1921,9 +1690,9 @@
     }
 }
 h3.renai-rag-heading {
-    max-width: 1050px !important;
+    max-width: 1250px !important;
     margin: 15px auto 0 !important;
-    padding: 5px 10px !important;
+    padding: 5px 5px !important;
 
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 23px !important;
@@ -1939,7 +1708,7 @@ h3.renai-rag-heading {
     text-shadow: 0 1px 1px rgba(20, 70, 120, 0.06);
 
     /* Smooth animation */
-    animation: renaiTextReveal 1.2s ease both;
+    animation: renaiTextReveal 2.2s ease both;
 }
 
 /* Highlighted words */
@@ -2466,22 +2235,7 @@ h3.renai-rag-heading span {
   .Blue-bar1{margin-top:0}
 }
 
-.Blue-bar1{width:100%}
-.moving-text1{
-  display:flex;
-  gap:0;
-  width:max-content;
-  animation:blue-bar1-loop 10s linear infinite;
-}
-.moving-text1 .mt-group{
-  display:inline-flex;
-  align-items:center;
-  gap:45px;
-  padding-right:45px;
-  flex-shrink:0;
-}
-@keyframes blue-bar1-loop{from{transform:translateX(0)}to{transform:translateX(-16.6666667%)}}
-@media (prefers-reduced-motion:reduce){.moving-text1{animation:none}}
+
 
 /* 3. Purchase ChatBot CTA: hidden by default, opens as a sheet from the Purchase ChatBot button */
 .lead-sheet{
@@ -2587,15 +2341,6 @@ h3.renai-rag-heading span {
 /* Why RenAI heading: bring the paragraph closer to the title */
 .why-renai .section-head{row-gap:0}
 
-/* Card 3 lines up with card 2: same picture height, same text start, same side padding */
-.feature-grid .benefit-card{padding:0;background:#f8fbff;border:1px solid #080704;border-radius:12px;display:flex;flex-direction:column}
-#features .feature-grid .benefit-visual{height:270px;margin:0;flex-shrink:0}
-.feature-grid .benefit-card .card-content{padding:26px 26px 0}
-.feature-grid .benefit-card .card-content h3{font-size:20px;line-height:normal;font-weight:550;letter-spacing:normal;margin-bottom:11px}
-.benefit-card .card-content p{font-size:12px;line-height:1.9;color:#f4f6f9}
-.feature-grid .benefit-card .card-tag{margin:auto 26px 0;width:auto;padding:14px 0 20px;font-size:10px;color:#2f5f96}
-.feature-grid .benefit-card .card-content{margin-bottom:20px}
-
 
 /* Extra space: sections were carrying 290px under their content */
 .section{padding-bottom:70px}
@@ -2618,14 +2363,13 @@ h3.renai-rag-heading span {
 .section-label,.chapter{font-size:11px}
 .chapter-mini{font-size:11px}
 .comparison-table .renai-tag,.renai-tag{font-size:9px}
-.feature-card p, .card-content p{font-size:13px;color:#f6f7f9}
 
 /* ==========================================================
    Round 2: navigation bar, pricing cards, footer
    ========================================================== */
 
 /* --- Navigation bar: blue gradient, white text --- */
-.site-header{background:linear-gradient(100deg,#082f6e 0%,#1259b8 52%,#2c8ae6 100%);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 3px 14px rgba(5,35,85,.25)}
+.site-header{background:linear-gradient(100deg,#021a42 0%,#1259b8 52%,#2c8ae6 100%);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 3px 14px rgba(5,35,85,.25)}
 .site-header .brand-logo{height:68px;margin:0;padding:3px 10px;border-radius:12px}
 .site-header .brand .brand-tag{border-left-color:rgba(255,255,255,.45);color:#e3efff}
 .site-header .desktop-nav a{color:#fff}
@@ -2872,18 +2616,12 @@ img{max-width:100%}
   /* features */
   .feature-grid{grid-template-columns:minmax(0,1fr)}
   #features .feature-visual,#features .feature-grid .benefit-visual{height:clamp(200px,56vw,270px)}
-  .card-content{padding:20px}
-  .feature-grid .benefit-card .card-content{padding:20px 20px 0}
+
   .feature-grid .benefit-card .card-tag{margin:auto 20px 0}
   .feature-footer{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .rag-content{padding:24px 20px}
   .rag-image,.rag-feature-image{min-height:220px}
 
-  /* developers */
-  .integration-tabs{min-width:0}
-  .integration-tabs button{font-size:15px;gap:10px}
-  .integration-panel{border-width:8px;border-radius:28px}
-  .developer-intro{font-size:16px}
 
   /* pricing */
   .pricing-grid{grid-template-columns:minmax(0,1fr)}
@@ -3104,7 +2842,7 @@ img{max-width:100%}
     position: relative;
     display: flex;
     flex-direction: column;
-
+    padding: 0;
     min-width: 0;
     overflow: hidden;
 
@@ -3141,40 +2879,6 @@ img{max-width:100%}
         0 12px 28px rgba(0, 119, 255, 0.20),
         0 25px 45px rgba(0, 87, 220, 0.15),
         0 0 15px rgba(0, 174, 255, 0.12);
-}
-
-
-/* =========================================
-   TOP IMAGE SECTION
-========================================= */
-
-.feature-visual,
-.benefit-visual {
-    position: relative;
-
-    width: 100%;
-    height: 290px;
-    min-height: 290px;
-
-    overflow: hidden;
-
-    background: #071b52;
-}
-
-
-/* Images */
-
-.feature-visual img,
-.benefit-visual img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    transition: transform 0.6s ease;
 }
 
 
@@ -3310,8 +3014,8 @@ img{max-width:100%}
 }
 
 .feature-card:nth-child(2) .chapter-mini::after {
-    content: "ϟ";
-    font-size: 29px;
+    content: "🔎";
+    font-size: 25px;
 }
 
 .feature-card:nth-child(3) .chapter-mini::after {
@@ -3363,11 +3067,11 @@ img{max-width:100%}
 .card-content p {
     position: relative;
 
+
     margin: 0;
     padding-left: 19px;
 
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 17px;
     font-weight: 450;
 
@@ -3745,11 +3449,12 @@ img{max-width:100%}
 
 /* File formats hover effect */
 
-.mt-group > span:not(:first-child):hover {
-    color: #a8edff;
-    align-items: center;
-    margin-left: 22px;
-    text-shadow: 0 0 12px #ffffff;
+.Blue-bar1:hover .mt-group > span:not(:first-child):hover {
+    color: #FFD700;
+
+    text-shadow:
+        0 0 8px #FFD700,
+        0 0 15px #FFA500;
 }
 
 /* Moving animation */
@@ -3763,24 +3468,7 @@ img{max-width:100%}
     }
 }
 
-/* Pause button */
 
-.marquee-pause {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    width: 35px;
-    height: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    background: rgba(0, 35, 110, 0.8);
-    color: #ffffff;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(100, 210, 255, 0.7);
-}
 
 /* Pause animation on hover */
 
@@ -3939,53 +3627,8 @@ img{max-width:100%}
     animation-play-state: paused;
 }
 
-/* PAUSE BUTTON */
 
-.blue-bar2 .marquee-pause2 {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    z-index: 5;
-
-    width: 36px;
-    height: 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-
-    background: linear-gradient(
-        135deg,
-        #087df2,
-        #032b80
-    );
-
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 8px rgba(100, 210, 255, 0.8),
-        0 0 15px rgba(0, 100, 255, 0.5);
-}
-
-/* Pause button hover */
-
-.blue-bar2 .marquee-pause2:hover {
-    background: #ffffff;
-    color: #0645a5;
-
-    box-shadow:
-        0 0 12px #ffffff,
-        0 0 20px #4bcaff;
-}
+  
 
 /* MOBILE RESPONSIVE */
 
@@ -4138,11 +3781,11 @@ img{max-width:100%}
 /* AI model hover effect */
 
 .Blue-bar3 .mt-group > span:not(:first-child):hover {
-    color: #a8edff;
+    color: #FFD700;
 
     text-shadow:
-        0 0 8px #ffffff,
-        0 0 15px #45caff;
+        0 0 8px #FFD700,
+        0 0 15px #FFA500;
 }
 
 /* Moving animation */
@@ -4157,31 +3800,9 @@ img{max-width:100%}
     }
 }
 
-/* Pause button */
 
-.Blue-bar3 .marquee-pause3 {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
 
-    z-index: 5;
 
-    width: 36px;
-    height: 36px;
-
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-
-    background: rgba(0, 30, 100, 0.9);
-    color: #ffffff;
-
-    font-size: 15px;
-    cursor: pointer;
-
-    box-shadow:
-        0 0 10px rgba(100, 210, 255, 0.8);
-}
 
 /* Pause on hover */
 
@@ -4228,33 +3849,58 @@ img{max-width:100%}
 /* ===== RENAI TEXT REVEAL EFFECT ===== */
 
 .closing-highlight-text1 {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 
-    font-family: 'Inter', sans-serif;
-    font-size: 44px;
-    font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
 
-    background: linear-gradient(
+  /* Crisp white base with moving dark gold and crimson red */
+  background: linear-gradient(
     90deg,
-    #ffffff,
-    #d9d9d9,
-    #000000,
-    #d9d9d9,
-    #ffffff
-);
-background-size: 200% auto;
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    #ffffff 0%,
+    #ffffff 25%,
+    #9e6f19 38%,
+    #5c3d0c 46%,
+    #dc2626 54%,
+    #881313 62%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    opacity: 0;
+  opacity: 0;
 
-    animation:
-        renaiTextReveal 2s ease forwards,
-        renaiTextGlow 4s ease-in-out 2s infinite;
+  animation:
+    renaiTextReveal 2s ease forwards,
+    renaiTextGlow 4s linear 2s infinite;
 }
+
+@keyframes renaiTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes renaiTextGlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 
 /* Text appearing animation */
 

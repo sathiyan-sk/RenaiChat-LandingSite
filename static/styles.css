@@ -3010,7 +3010,9 @@ img{max-width:100%}
 /* Different icons for each card */
 
 .feature-card:nth-child(1) .chapter-mini::after {
-    content: "▤";
+    content: "📄";
+    font-size: 23px;
+    margin-right: 15px;
 }
 
 .feature-card:nth-child(2) .chapter-mini::after {
@@ -3019,7 +3021,9 @@ img{max-width:100%}
 }
 
 .feature-card:nth-child(3) .chapter-mini::after {
-    content: "▦";
+    content: "🤖";
+    font-size: 24px;
+    margin-right: 15px;
 }
 
 

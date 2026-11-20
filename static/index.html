@@ -812,7 +812,15 @@
               Enter your details below
             </p>
 
-            <form class="lead-cta-form" id="leadCtaForm" action="send-enquiry.php" method="POST">
+            <form class="lead-cta-form" id="leadCtaForm">
+
+              <!-- Web3Forms: paste your Access Key in the value below -->
+              <input type="hidden" name="access_key" value="f8416bf0-ce5b-4abd-b7a7-62a590f4d845">
+              <input type="hidden" name="subject" id="leadSubject" value="New enquiry from RenAI website">
+              <input type="hidden" name="from_name" value="RenAI Website">
+              <input type="hidden" name="cta_clicked" id="leadSource" value="">
+              <!-- Anti-spam honeypot (hidden from users) -->
+              <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
 
               <div class="lead-cta-field">
                 <label for="leadName">Full Name</label>

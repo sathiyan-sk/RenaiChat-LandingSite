@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   /* Purchase ChatBot CTA sheet: opens only from [data-purchase] buttons, sends name, contact number and
-     description to send-enquiry.php, then closes and leaves the visitor exactly where they clicked. */
+     description to Web3Forms (emailed to you), then closes and leaves the visitor exactly where they clicked. */
   (function () {
     const sheet = document.getElementById('leadSheet');
     const form = document.getElementById('leadCtaForm');
@@ -211,6 +211,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!sheet || !form || !status) return;
     const planField = document.getElementById('leadPlanField');
     const planInput = document.getElementById('leadPlan');
+    const subjectInput = document.getElementById('leadSubject');
+    const sourceInput = document.getElementById('leadSource');
     let trigger = null;
     let closeTimer = null;
 
@@ -224,13 +226,19 @@ document.addEventListener('DOMContentLoaded', function () {
         planInput.disabled = !plan;
         planField.hidden = !plan;
       }
+      /* Tell the email which CTA was clicked (shows in the subject line and body). */
+      const ctaLabel = from ? (from.textContent || '').replace(/\s+/g, ' ').trim() : '';
+      if (sourceInput) sourceInput.value = ctaLabel;
+      if (subjectInput) subjectInput.value = plan
+        ? 'New enquiry - ' + plan + ' plan (RenAI website)'
+        : 'New enquiry - ' + (ctaLabel || 'Contact') + ' (RenAI website)';
       status.hidden = true;
       status.textContent = '';
       const gap = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.paddingRight = gap > 0 ? gap + 'px' : '';
       document.body.style.overflow = 'hidden';
       sheet.hidden = false;
-      const first = form.querySelector('input');
+      const first = form.querySelector('input:not([type="hidden"]):not([type="checkbox"])');
       if (first) first.focus({ preventScroll: true });
     }
 
@@ -257,26 +265,27 @@ document.addEventListener('DOMContentLoaded', function () {
       if (button) button.disabled = true;
       let sent = false;
       try {
-        const response = await fetch('send-enquiry.php', {
+        const payload = Object.fromEntries(new FormData(form));
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
         });
         let result;
         try { result = await response.json(); }
-        catch (_) { throw new Error('The server did not return a valid reply. The site must be opened through a PHP server (for example http://localhost:8000/final.html), not by double-clicking the HTML file.'); }
+        catch (_) { throw new Error('Unexpected reply from the mail service. Please try again.'); }
         if (!response.ok || !result.success) {
           throw new Error(result.message || 'Unable to send your details. Please try again.');
         }
         sent = true;
-        status.textContent = result.message || 'Your details were submitted successfully!';
+        status.textContent = 'Thank you! Your details were submitted successfully. Our team will contact you soon.';
         status.style.color = '#16803c';
         form.reset();
       } catch (error) {
-        /* "Failed to fetch" = the browser could not reach send-enquiry.php at all (offline, wrong address, or no PHP server). */
+        /* TypeError = the browser could not reach Web3Forms (offline / blocked). */
         const unreachable = error instanceof TypeError;
         status.textContent = unreachable
-          ? 'Could not reach the server. Check your internet connection. If you are testing locally, run the site with PHP (php -S localhost:8000) and open http://localhost:8000/final.html.'
+          ? 'Could not reach the mail service. Please check your internet connection and try again.'
           : (error.message || 'Unable to send your details. Please try again.');
         status.style.color = '#b42318';
       } finally {
